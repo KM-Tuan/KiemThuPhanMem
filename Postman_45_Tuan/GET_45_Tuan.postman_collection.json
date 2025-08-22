@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "034fb0f0-359e-4822-be6f-71bd0299f940",
+		"name": "GET_45_Tuan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40863523"
+	},
+	"item": [
+		{
+			"name": "LayTatCaUser_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//TC1_status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC1_status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//TC2_response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC2_response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//TC3_Content-Type_45_Tuan: Kiểm tra header có thuộc tính Content-Type\r",
+							"pm.test(\"TC3_Content-Type_45_Tuan\", function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})\r",
+							"//TC4_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC4_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody()\r",
+							"});\r",
+							"//TC5_ContainsString_45_Tuan: response có chứa chuỗi \"trangnguyen@gmail.com\" không\r",
+							"pm.test(\"TC5_ContainsString_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"trangnguyen@gmail.com\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LayUserTheoId_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//TC1_status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC1_status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//TC2_response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC2_response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//TC3_Content-Type_45_Tuan: Kiểm tra header có thuộc tính Content-Type\r",
+							"pm.test(\"TC3_Content-Type_45_Tuan\", function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})\r",
+							"//TC4_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC4_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody()\r",
+							"});\r",
+							"//TC5_ContainsString_45_Tuan: response có chứa chuỗi \"trangnguyen@gmail.com\" không\r",
+							"pm.test(\"TC5_ContainsString_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"trangnguyen@gmail.com\")\r",
+							"});\r",
+							"//Lấy dữ liệu trả về\r",
+							"let jsonData_45_Tuan = pm.response.json();\r",
+							"//TC6_Type_45_Tuan: Kiểm tra kiểu dữ liệu trả về của first_name là string\r",
+							"pm.test(\"TC6_Type_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.first_name).to.be.a(\"string\")\r",
+							"});\r",
+							"//TC7_ID_45_Tuan: Kiểm trả giá trị trả về của id\r",
+							"pm.test(\"TC7_ID_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.id).to.equal(\"1\")\r",
+							"});\r",
+							"//TC8_Math_45_Tuan: Kiểm trả kiểu dữ liệu trả về của math là number\r",
+							"pm.test(\"TC8_Math_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.subject_scores[0].math).to.be.a(\"number\")\r",
+							"});\r",
+							"//TC9_Phone_45_Tuan: Kiểm tra giá trị trả về của phone\r",
+							"pm.test(\"TC9_Phone_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.phone).to.equal(\"0768996543\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan/1",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LayUserTheoTen_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//TC1_status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC1_status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//TC2_response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC2_response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//TC3_Content-Type_45_Tuan: Kiểm tra header có thuộc tính Content-Type\r",
+							"pm.test(\"TC3_Content-Type_45_Tuan\", function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})\r",
+							"//TC4_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC4_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody()\r",
+							"});\r",
+							"//TC5_ContainsString_45_Tuan: response có chứa chuỗi \"trangnguyen@gmail.com\" không\r",
+							"pm.test(\"TC5_ContainsString_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"trangnguyen@gmail.com\")\r",
+							"});\r",
+							"//Lấy dữ liệu trả về\r",
+							"let jsonData_45_Tuan = pm.response.json();\r",
+							"//TC6_Type_45_Tuan: Kiểm tra kiểu dữ liệu trả về của first_name là string\r",
+							"pm.test(\"TC6_Type_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan[0].first_name).to.be.a(\"string\")\r",
+							"});\r",
+							"//TC7_ID_45_Tuan: Kiểm trả giá trị trả về của id\r",
+							"pm.test(\"TC7_ID_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan[0].id).to.equal(\"1\")\r",
+							"});\r",
+							"//TC8_Math_45_Tuan: Kiểm trả kiểu dữ liệu trả về của math là number\r",
+							"pm.test(\"TC8_Math_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan[0].subject_scores[0].math).to.be.a(\"number\")\r",
+							"});\r",
+							"//TC9_Phone_45_Tuan: Kiểm tra giá trị trả về của phone\r",
+							"pm.test(\"TC9_Phone_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan[0].phone).to.equal(\"0768996543\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan/?first_name=Nguyen",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan",
+						""
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "Nguyen"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

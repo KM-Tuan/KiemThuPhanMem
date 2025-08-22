@@ -1,0 +1,12 @@
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\bin\Debug\BaiTapLon_45_Tuan.exe.config
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\bin\Debug\BaiTapLon_45_Tuan.exe
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\bin\Debug\BaiTapLon_45_Tuan.pdb
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.csproj.AssemblyReference.cache
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.FormLogin_45_Tuan.resources
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.FormMain_45_Tuan.resources
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.Properties.Resources.resources
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.csproj.GenerateResource.cache
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.csproj.CoreCompileInputs.cache
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.exe
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.pdb
+D:\Kiem_Thu_Phan_Mem\BaiTapLon_45_Tuan\BaiTapLon_45_Tuan\obj\Debug\BaiTapLon_45_Tuan.FormRegister_45_Tuan.resources

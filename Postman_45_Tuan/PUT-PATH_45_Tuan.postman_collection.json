@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "2d235c51-2103-4b84-bcae-0a8ce8d72006",
+		"name": "PUT/PATH_45_Tuan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40863523"
+	},
+	"item": [
+		{
+			"name": "CapNhatThongTin_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test dữ liệu được gửi lên API\r",
+							"let requestData_45_Tuan = JSON.parse(pm.request.body.raw);\r",
+							"//TC1_first_name_45_Tuan: Kiểm tra có first_name không\r",
+							"pm.test(\"TC1_first_name_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan).to.have.property(\"first_name\")\r",
+							"});\r",
+							"//TC2_RequestType_45_Tuan: Kiểm tra kiểu truyền có phải string\r",
+							"pm.test(\"TC2_RequestType_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.email).to.be.a(\"string\")\r",
+							"});\r",
+							"//TC3_RequestNotEmpty_45_Tuan: Kiểm tra giá trị truyền không rỗng\r",
+							"pm.test(\"TC3_RequestNotEmpty_45_Tuan\", function(){\r",
+							"    pm.expect(pm.request.body.raw).to.not.be.empty\r",
+							"});\r",
+							"//TC4_Suitable_45_Tuan: Kiểm tra English truyền không âm\r",
+							"pm.test(\"TC4_Suitable_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores[0].english).to.be.above(0)\r",
+							"});\r",
+							"//TC5_status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC5_status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"});\r",
+							"//TC6_Response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC6_Response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200)\r",
+							"});\r",
+							"//TC7_Content-Type_45_Tuan: Kiểm tra header có thuộc tính Content-Type\r",
+							"pm.test(\"TC7_Content-Type_45_Tuan\", function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})\r",
+							"//TC8_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC8_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody()\r",
+							"});\r",
+							"//Test dữ liệu được trả về\r",
+							"let jsonData_45_Tuan = pm.response.json();\r",
+							"//TC9_first_name_45_Tuan: Kiểm tra giá trị của first_name\r",
+							"pm.test(\"TC9_first_name_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.first_name).to.equal(\"Nguyen\")\r",
+							"});\r",
+							"//TC10_ResponseType_45_Tuan: Kiểm tra kiểu dữ liệu trả về là string\r",
+							"pm.test(\"TC10_ResponseType_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.id).to.be.a(\"string\")\r",
+							"});\r",
+							"//TC11_Id_45_Tuan: Kiểm tra id trả về không thay đổi\r",
+							"pm.test(\"TC11_Id_45_Tuan\", function(){\r",
+							"    pm.expect(jsonData_45_Tuan.id).to.equal(\"1\")\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"1\",\r\n        \"email\": \"trangnguyen@gmail.com\",\r\n        \"first_name\": \"Nguyen\",\r\n        \"last_name\": \"Trang\",\r\n        \"phone\": \"0768996543\",\r\n        \"subject_scores\": [\r\n            {\r\n                \"math\": 9,\r\n                \"literature\": 8,\r\n                \"english\": 9\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan/1",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CapNhatDiem_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test dữ liệu được gửi lên API\r",
+							"let requestData_45_Tuan = JSON.parse(pm.request.body.raw);\r",
+							"\r",
+							"// TC3_RequestNotEmpty_45_Tuan: Kiểm tra giá trị truyền không rỗng\r",
+							"pm.test(\"TC3_RequestNotEmpty_45_Tuan\", function(){\r",
+							"    pm.expect(pm.request.body.raw).to.not.be.empty\r",
+							"});\r",
+							"\r",
+							"// TC4_Suitable_45_Tuan: Kiểm tra math truyền không âm\r",
+							"pm.test(\"TC4_Suitable_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores[0].math).to.be.above(0)\r",
+							"});\r",
+							"\r",
+							"// TC5_Suitable_45_Tuan: Kiểm tra literature truyền không âm\r",
+							"pm.test(\"TC5_Suitable_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores[0].literature).to.be.above(0)\r",
+							"});\r",
+							"\r",
+							"// TC6_Suitable_45_Tuan: Kiểm tra english truyền không âm\r",
+							"pm.test(\"TC6_Suitable_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores[0].english).to.be.above(0)\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject_scores\": [\r\n        {\r\n            \"math\": 10,\r\n            \"literature\": 10,\r\n            \"english\": 10\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan/8",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

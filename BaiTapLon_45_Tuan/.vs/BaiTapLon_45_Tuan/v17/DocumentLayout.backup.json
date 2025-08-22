@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Kiem_Thu_Phan_Mem\\BaiTapLon_45_Tuan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7AF3FA-D878-4426-98FB-DFAFE5D418F7}|UnitTest_45_Tuan\\UnitTest_45_Tuan.csproj|d:\\kiem_thu_phan_mem\\baitaplon_45_tuan\\unittest_45_tuan\\unittestlogin_45_tuan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7AF3FA-D878-4426-98FB-DFAFE5D418F7}|UnitTest_45_Tuan\\UnitTest_45_Tuan.csproj|solutionrelative:unittest_45_tuan\\unittestlogin_45_tuan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTestLogin_45_Tuan.cs",
+              "DocumentMoniker": "D:\\Kiem_Thu_Phan_Mem\\BaiTapLon_45_Tuan\\UnitTest_45_Tuan\\UnitTestLogin_45_Tuan.cs",
+              "RelativeDocumentMoniker": "UnitTest_45_Tuan\\UnitTestLogin_45_Tuan.cs",
+              "ToolTip": "D:\\Kiem_Thu_Phan_Mem\\BaiTapLon_45_Tuan\\UnitTest_45_Tuan\\UnitTestLogin_45_Tuan.cs",
+              "RelativeToolTip": "UnitTest_45_Tuan\\UnitTestLogin_45_Tuan.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowEQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T03:46:44.58Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

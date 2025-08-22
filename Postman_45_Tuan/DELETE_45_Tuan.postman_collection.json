@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "2bf7f06a-d74f-4dad-8815-c2d4403cdae2",
+		"name": "DELETE_45_Tuan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40863523"
+	},
+	"item": [
+		{
+			"name": "XoaUserTheoId_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//TC1_status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC1_status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//TC2_Response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC2_Response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"//TC3_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC3_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody();\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan/8",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

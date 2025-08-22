@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "8fdaeac1-f061-4523-8105-e549c9870656",
+		"name": "POST_45_Tuan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40863523"
+	},
+	"item": [
+		{
+			"name": "TaoMoiMotUser_45_Tuan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test dữ liệu được gửi lên API\r",
+							"let requestData_45_Tuan = JSON.parse(pm.request.body.raw);\r",
+							"//TC1_NotNull_45_Tuan: dữ liệu không trống\r",
+							"pm.test(\"TC1_NotNull_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan).to.not.be.empty\r",
+							"});\r",
+							"//TC2_Conten_45_Tuan: Gửi lên API có đủ các trường dữ liệu\r",
+							"pm.test(\"TC2_Conten_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan).to.have.all.keys(\"id\", \"email\", \"first_name\", \"last_name\", \"phone\", \"subject_scores\")\r",
+							"});\r",
+							"//TC3_Request_45_Tuan: Dữ liệu gửi lên APIs\r",
+							"pm.test(\"TC3_Request_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.id).to.be.a(\"string\")\r",
+							"    pm.expect(requestData_45_Tuan.email).to.be.a(\"string\")\r",
+							"    pm.expect(requestData_45_Tuan.first_name).to.be.a(\"string\")\r",
+							"    pm.expect(requestData_45_Tuan.last_name).to.be.a(\"string\")\r",
+							"    pm.expect(requestData_45_Tuan.phone).to.be.a(\"string\")\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores).to.be.a(\"array\")\r",
+							"});\r",
+							"//TC4_Math_45_Tuan: Kiểm tra math không âm\r",
+							"pm.test(\"TC4_Math_45_Tuan\", function(){\r",
+							"    pm.expect(requestData_45_Tuan.subject_scores[0].math).to.be.above(0)\r",
+							"});\r",
+							"//TC5_Status_45_Tuan: Kiểm tra trạng thái phản hồi\r",
+							"pm.test(\"TC5_Status_45_Tuan\", function(){\r",
+							"    pm.response.to.have.status(201)\r",
+							"});\r",
+							"//TC6_Response_45_Tuan: Kiểm tra thời gian phản hồi dưới 200ms\r",
+							"pm.test(\"TC6_Response_45_Tuan\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200)\r",
+							"});\r",
+							"//TC7_Content_45_Tuan: Kiểm tra header có thuộc tính Content-Type\r",
+							"pm.test(\"TC7_Content_45_Tuan\", function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})\r",
+							"//TC8_Json_45_Tuan: Kiểm tra xem có JSON không\r",
+							"pm.test(\"TC8_Json_45_Tuan\", function(){\r",
+							"    pm.response.to.have.jsonBody()\r",
+							"});\r",
+							"//Test dữ liệu được trả về\r",
+							"let jsonData_45_Tuan = pm.response.json();\r",
+							"//TC7_DataResponse_45_Tuan: Giá trị trả về giống giá trị gửi lên API\r",
+							"pm.test(\"TC7_DataResponse_45_Tuan\", function(){\r",
+							"    let requestData_45_Tuan = JSON.parse(pm.request.body.raw);\r",
+							"    pm.expect(jsonData_45_Tuan.id).to.equal(requestData_45_Tuan.id)\r",
+							"    pm.expect(jsonData_45_Tuan.email).to.equal(requestData_45_Tuan.email)\r",
+							"    pm.expect(jsonData_45_Tuan.first_name).to.equal(requestData_45_Tuan.first_name)\r",
+							"    pm.expect(jsonData_45_Tuan.last_name).to.equal(requestData_45_Tuan.last_name)\r",
+							"    pm.expect(jsonData_45_Tuan.phone).to.equal(requestData_45_Tuan.phone)\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"8\",\r\n    \"email\": \"kieutuan@gmail.com\",\r\n    \"first_name\": \"Kieu\",\r\n    \"last_name\": \"Tuan\",\r\n    \"phone\": \"0768996543\",\r\n    \"subject_scores\": [\r\n        {\r\n            \"math\": 9,\r\n            \"literature\": 9,\r\n            \"english\": 9\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{global_45_Tuan}}/user_45_Tuan",
+					"host": [
+						"{{global_45_Tuan}}"
+					],
+					"path": [
+						"user_45_Tuan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
